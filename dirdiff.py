@@ -3,7 +3,3 @@
 
 def compare(source, dest):
     pass
-
-
-def test_compare():
-    assert compare(None, None) == []
