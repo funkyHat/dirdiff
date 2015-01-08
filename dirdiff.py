@@ -5,5 +5,5 @@ def compare(source, dest):
     return []
 
 def hasher(file):
-    with open(file,'r') as f:
-        hashlib.md5(f.read().hexdigest()
+    with open(file,'rb') as f:
+        return hashlib.md5(f.read()).hexdigest()
