@@ -17,3 +17,7 @@ def test_compare_disk():
 def test_compare_non_existent_directory():
     with pytest.raises(OSError):
         compare('test_data/1/src', 'test_data/1/sanmiguel')
+
+
+def test_compare_identity():
+    compare('test_data/1/src', 'test_data/1/src') == []
