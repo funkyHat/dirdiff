@@ -2,4 +2,4 @@
 
 
 def compare(source, dest):
-    pass
+    return []
