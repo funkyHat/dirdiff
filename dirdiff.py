@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import os
+import hashlib
 
 
 def get_all_files(target_dir):
@@ -11,5 +12,11 @@ def get_all_files(target_dir):
     return all_files
 
 
+def hasher(file):
+    with open(file,'rb') as f:
+        return hashlib.md5(f.read()).hexdigest()
+
+
 def compare(source, dest):
     return []
+
