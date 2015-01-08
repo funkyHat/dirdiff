@@ -11,17 +11,27 @@ Usage:
 Options:
   -h --help             Show this screen.
 """
+import os
+import sys
+
 from docopt import docopt
 # from dirdiff import compare
 
 def compare(source, target):
     return ['thing', 'other_thing']
 
+def check_path(path):
+    if not os.path.isdir(path):
+        print("{} is not a valid directory.".format(path))
+        sys.exit(-1)
 
 if __name__ == '__main__':
     arguments = docopt(__doc__)
     source_path = arguments['<source-path>']
     target_path = arguments['<target-path>']
+    check_path(source_path)
+    check_path(target_path)
+
     missing_files = compare(source_path, target_path)
     print('\n'.join(missing_files))
 
