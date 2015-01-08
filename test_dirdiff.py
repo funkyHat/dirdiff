@@ -30,9 +30,9 @@ def test_compare_smoke():
 
 def test_compare_disk():
     expected = [
-        'src/alanis_moriset.mp3'
+        'test_data/1/src/alanis_moriset.mp3'
     ]
-    assert compare('test_data/1/src', 'test_data/1/dest') == expected
+    assert list(compare('test_data/1/src', 'test_data/1/dest')) == expected
 
 
 def test_compare_non_existent_directory():
@@ -45,12 +45,12 @@ def test_compare_identity():
 
 
 def test_hash_same():
-    f1 = 'test_data/2/rem.mp3'
-    f2 = 'test_data/2/mer.mp3'
+    f1 = 'test_data/3/rem.mp3'
+    f2 = 'test_data/3/mer.mp3'
     assert hasher(f1) == hasher(f2)
 
 
 def test_hash_different():
-    f1 = 'test_data/2/mozart.mp3'
-    f2 = 'test_data/2/mer.mp3'
+    f1 = 'test_data/3/mozart.mp3'
+    f2 = 'test_data/3/mer.mp3'
     assert hasher(f1) != hasher(f2)

@@ -21,12 +21,10 @@ def compare(source, dest):
     source_files = get_all_files(source)
     dest_files = get_all_files(dest)
 
-    source_hashes = {hasher(f):f for f in source_files}
     dest_hashes = {hasher(f) for f in dest_files}
 
-    missing_files = [
-        filename for (hsh, filename) in source_hashes.items()
-        if hsh not in dest_hashes
-    ]
-    return missing_files
+    for f in source_files:
+        hsh = hasher(f)
+        if hsh not in dest_hashes:
+            yield f
 
