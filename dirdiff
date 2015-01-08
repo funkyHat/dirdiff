@@ -20,8 +20,8 @@ def compare(source, target):
 
 if __name__ == '__main__':
     arguments = docopt(__doc__)
-    source_path = argument['<source-path>']
-    target_path = argument['<target-path>']
+    source_path = arguments['<source-path>']
+    target_path = arguments['<target-path>']
     missing_files = compare(source_path, target_path)
     print('\n'.join(missing_files))
 
