@@ -1,0 +1,3 @@
+option for do-not-recurse into target (or source?)
+multiple targets.
+

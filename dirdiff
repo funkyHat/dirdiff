@@ -1,6 +1,27 @@
 #!/usr/bin/env python3
+"""
+Dirdiff -- check whether all the files from one location
+are present in a second target location -- irrespective
+of filenames, directory structure
+
+
+Usage:
+  dirdiff <source-path> <target-path>
+
+Options:
+  -h --help             Show this screen.
+"""
+from docopt import docopt
+# from dirdiff import compare
+
+def compare(source, target):
+    return ['thing', 'other_thing']
 
 
 if __name__ == '__main__':
-    print('Hello')
+    arguments = docopt(__doc__)
+    source_path = argument['<source-path>']
+    target_path = argument['<target-path>']
+    missing_files = compare(source_path, target_path)
+    print('\n'.join(missing_files))
 
